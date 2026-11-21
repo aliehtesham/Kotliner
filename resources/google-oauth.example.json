@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy this file to google-oauth.json (same folder) to bake Expo Builder's Google registration into the build: the Configure page then hides the client ID/secret fields and shows a plain 'Sign in with Google' button — the same model as the Google buttons on websites. Create the client once in Google Cloud (type 'Desktop app'; its project gets linked in Play Console → Setup → API access). Desktop clients are public and need no client secret (PKCE proves the app's identity) — include 'clientSecret' only for an older client that has one, or delete the field.",
+  "clientId": "123456789012-abcdefghijklmnopabcdefghijklmnop.apps.googleusercontent.com",
+  "clientSecret": ""
+}

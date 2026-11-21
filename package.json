@@ -1,0 +1,62 @@
+{
+  "name": "kotliner",
+  "productName": "Kotliner",
+  "version": "1.4.2",
+  "description": "Local APK/AAB builder & signer for any Kotlin Android (Gradle) project",
+  "author": "aliehtesham",
+  "main": "out/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p renderer/tsconfig.json && tsc -p tsconfig.scripts.json",
+    "start": "npm run build && electron .",
+    "smoke": "npm run build && electron . --smoke",
+    "icons": "npm run build && node tools/make-icons.js",
+    "dist": "npm run build && electron-builder --win nsis",
+    "verify:naming": "electron .smoke/verify-naming.js",
+    "verify:inputs": "electron .smoke/verify-inputs.js",
+    "verify:history": "electron .smoke/verify-history.js",
+    "verify:vault": "electron .smoke/verify-vault.js"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^20.19.43",
+    "electron": "^33.2.0",
+    "electron-builder": "^26.15.3",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
+  "build": {
+    "appId": "com.kotliner.app",
+    "productName": "Kotliner",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "renderer/index.html",
+      "renderer/assets/**/*",
+      "resources/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "resources/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Kotliner"
+    }
+  }
+}

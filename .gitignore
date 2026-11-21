@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Compiled TypeScript output (run `npm run build`)
+out/
+*.tsbuildinfo
+renderer/assets/*.js
+.smoke/*.js
+tools/*.js
+
+# Runtime logs
+*.log
+
+# Baked Google OAuth client override (dev only — the shipped ID lives in main.ts)
+resources/google-oauth.json
+
+# Generated test fixtures (rebuild with .smoke/make-fake.sh)
+.smoke/fake-project/
+.smoke/fake-kmp/
+.smoke/reloc-*/
+*.jks
