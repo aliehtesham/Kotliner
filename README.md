@@ -6,7 +6,7 @@ A local Material 3 Expressive desktop app (Electron) that builds and signs **any
 
 ## Download
 
-Build the installer yourself: `npm install && npm run dist` → `dist/Kotliner Setup 1.0.0.exe`. The app itself checks all build prerequisites on first launch.
+Grab the latest installer from the [Releases page](https://github.com/aliehtesham/Kotliner/releases) (`Kotliner-Setup-<version>.exe`) — or build it yourself: `npm install && npm run dist` → `dist/Kotliner Setup <version>.exe`. The app itself checks all build prerequisites on first launch.
 
 ## Run it
 
